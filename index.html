@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHI*KA Tulum — Barefoot Luxury on the Caribbean Coast</title>
+  <meta name="description" content="CHI*KA Tulum is an intimate barefoot-luxury retreat nestled between the Caribbean Sea and the Tulum jungle. 12 bespoke suites, a healing spa, beach club, and curated ceremonies.">
+  <meta name="keywords" content="CHI*KA Tulum, boutique hotel Tulum, barefoot luxury Mexico, Tulum beach retreat, Amansala sister property">
+  <meta property="og:title" content="CHI*KA Tulum — Barefoot Luxury">
+  <meta property="og:description" content="Where the jungle meets the sea. An intimate sanctuary on Mexico's Caribbean coast.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://chikatulum.com/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Page-specific overrides */
+    .home-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 600px;
+    }
+    .home-intro__text {
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--sp-24) var(--sp-16);
+    }
+    .home-intro__media {
+      position: relative;
+      overflow: hidden;
+    }
+    .home-intro__media img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 1.2s var(--ease);
+    }
+    .home-intro__media:hover img { transform: scale(1.04); }
+    .home-intro__quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--brown-lt);
+      line-height: 1.8;
+      margin-bottom: var(--sp-10);
+    }
+    /* Press logos */
+    .press-strip {
+      background: var(--sand);
+      padding: var(--sp-10) var(--sp-8);
+      text-align: center;
+      border-top: 1px solid var(--sand-mid);
+      border-bottom: 1px solid var(--sand-mid);
+    }
+    .press-strip__label {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brown-lt);
+      display: block;
+      margin-bottom: var(--sp-6);
+    }
+    .press-strip__logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-12);
+      flex-wrap: wrap;
+    }
+    .press-strip__logos span {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--sand-deep);
+      letter-spacing: 0.05em;
+    }
+    @media (max-width: 768px) {
+      .home-intro { grid-template-columns: 1fr; }
+      .home-intro__text { padding: var(--sp-16) var(--sp-6); }
+      .home-intro__media { aspect-ratio: 4/3; }
+      .press-strip__logos { gap: var(--sp-6); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ─────────────────────────────────────────── -->
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo"><span>Chi*ka</span> Tulum</a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="spa.html">Spa</a></li>
+      <li><a href="beach-club.html">Beach Club</a></li>
+      <li><a href="weddings.html">Weddings</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+    <button class="nav__cta" data-modal="booking" aria-label="Book your stay">Book a Stay</button>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<nav class="nav__mobile" aria-label="Mobile navigation">
+  <ul class="nav__mobile-links" role="list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="spa.html">Spa</a></li>
+    <li><a href="beach-club.html">Beach Club</a></li>
+    <li><a href="weddings.html">Weddings</a></li>
+    <li><a href="events.html">Events</a></li>
+  </ul>
+  <div class="nav__mobile-cta">
+    <button class="btn btn--primary" style="width:100%; justify-content:center;" data-modal="booking">Book a Stay</button>
+  </div>
+</nav>
+<div class="nav__overlay" aria-hidden="true"></div>
+
+<!-- ── Hero ───────────────────────────────────────────────── -->
+<section class="hero" aria-label="Hero">
+  <div class="hero__bg" style="background-image: url('https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/6cfab629-e599-49af-90db-4e47f8295eaf/IMG_6285-Pano+%281%29.jpg');" role="img" aria-label="Azure Caribbean waters and white sand beach at CHI*KA Tulum"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content container">
+    <p class="hero__tagline">Tulum, Mexico &mdash; A Barefoot Sanctuary</p>
+    <span class="hero__script">Chi*ka</span>
+    <h1 class="hero__title">Where the jungle<br>meets the sea.</h1>
+    <p class="hero__subtitle">Not a hotel. A feeling you'll try to explain<br>to everyone you know.</p>
+    <div class="hero__ctas">
+      <button class="btn btn--primary" data-modal="booking">Reserve Your Room</button>
+      <a href="rooms.html" class="btn btn--outline-light">Explore the Property</a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── Press strip ────────────────────────────────────────── -->
+<div class="press-strip">
+  <span class="press-strip__label">As seen in</span>
+  <div class="press-strip__logos">
+    <span>Condé Nast Traveler</span>
+    <span>Vogue</span>
+    <span>Travel + Leisure</span>
+    <span>Departures</span>
+    <span>Town &amp; Country</span>
+  </div>
+</div>
+
+<!-- ── Intro / Story ──────────────────────────────────────── -->
+<section class="home-intro" aria-labelledby="intro-heading">
+  <div class="home-intro__text" data-reveal="left">
+    <span class="section-label">The Property</span>
+    <span class="eyebrow">Come as you are.</span>
+    <h2 id="intro-heading" style="font-family:var(--font-serif);font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:300;line-height:1.2;margin-bottom:var(--sp-8);">
+      Twelve rooms.<br>One jungle.<br>Infinite sky.
+    </h2>
+    <p class="home-intro__quote">
+      CHI*KA was built to feel like a beach house someone found and never wanted to leave. Open-air architecture, salt breeze through every room, the sound of the ocean always present. Sister to Amansala, raised on the same land — with a spirit all her own.
+    </p>
+    <a href="rooms.html" class="btn-arrow">Discover the rooms</a>
+  </div>
+  <div class="home-intro__media" data-reveal="right">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/f7100cbc-68da-4412-b6b4-5fed92913d5e/Amansala+chica+1+%282%29.png"
+         alt="CHI*KA Tulum open-air pool surrounded by jungle palms"
+         loading="lazy" width="960" height="640">
+  </div>
+</section>
+
+<!-- ── Stats ──────────────────────────────────────────────── -->
+<div class="stats-row" aria-label="Property highlights">
+  <div class="stat" data-reveal="up" data-delay="100">
+    <span class="stat__number">12</span>
+    <span class="stat__label">Intimate Suites</span>
+  </div>
+  <div class="stat" data-reveal="up" data-delay="200">
+    <span class="stat__number">1</span>
+    <span class="stat__label">Kilometre of Beach</span>
+  </div>
+  <div class="stat" data-reveal="up" data-delay="300">
+    <span class="stat__number">∞</span>
+    <span class="stat__label">Days of Sun</span>
+  </div>
+  <div class="stat" data-reveal="up" data-delay="400">
+    <span class="stat__number">0</span>
+    <span class="stat__label">Dress Codes</span>
+  </div>
+</div>
+
+<!-- ── Experiences Grid ───────────────────────────────────── -->
+<section aria-labelledby="experiences-heading">
+  <div style="padding: var(--sp-24) var(--sp-8) var(--sp-8); text-align:center;">
+    <span class="section-label" data-reveal="fade">A life fully lived</span>
+    <h2 id="experiences-heading" style="font-family:var(--font-serif);font-size:clamp(2rem,4vw,3rem);font-weight:300;margin:var(--sp-4) 0;" data-reveal="up">
+      Everything you need.<br>Nothing you don't.
+    </h2>
+  </div>
+  <div class="experience-grid">
+    <a href="rooms.html" class="experience-card" aria-label="Explore our rooms and suites">
+      <div class="experience-card__bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/dc9c8ec6-6dcf-4104-8e89-75e9b39095ca/Amansala+chica+2+%281%29.png');" role="img" aria-label="Palapa suite interior with ocean view"></div>
+      <div class="experience-card__overlay"></div>
+      <div class="experience-card__content">
+        <span class="experience-card__label">Sleep</span>
+        <h3 class="experience-card__title">Rooms &amp; Suites</h3>
+        <span class="experience-card__link">Explore</span>
+      </div>
+    </a>
+    <a href="spa.html" class="experience-card" aria-label="Discover our healing spa">
+      <div class="experience-card__bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/7de3b2d8-3641-4865-a5c7-07376588b77a/Amansala+chica+3+%281%29.png');" role="img" aria-label="Open-air spa with candles and natural elements"></div>
+      <div class="experience-card__overlay"></div>
+      <div class="experience-card__content">
+        <span class="experience-card__label">Restore</span>
+        <h3 class="experience-card__title">The Spa</h3>
+        <span class="experience-card__link">Explore</span>
+      </div>
+    </a>
+    <a href="beach-club.html" class="experience-card" aria-label="Visit our beach club">
+      <div class="experience-card__bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/40b92552-e68b-4817-9944-5174bb46ad02/Amansala+chica+4+%282%29.png');" role="img" aria-label="CHI*KA beach club with palapas and Caribbean water"></div>
+      <div class="experience-card__overlay"></div>
+      <div class="experience-card__content">
+        <span class="experience-card__label">Gather</span>
+        <h3 class="experience-card__title">Beach Club</h3>
+        <span class="experience-card__link">Explore</span>
+      </div>
+    </a>
+    <a href="weddings.html" class="experience-card" aria-label="Plan your wedding at CHI*KA">
+      <div class="experience-card__bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/bbb7e935-97be-498d-8777-69eb62aaf666/2F0A7402+%282%29.jpg');" role="img" aria-label="Intimate beach wedding ceremony at sunset"></div>
+      <div class="experience-card__overlay"></div>
+      <div class="experience-card__content">
+        <span class="experience-card__label">Celebrate</span>
+        <h3 class="experience-card__title">Weddings</h3>
+        <span class="experience-card__link">Explore</span>
+      </div>
+    </a>
+    <a href="events.html" class="experience-card" aria-label="Private events and gatherings">
+      <div class="experience-card__bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/532b2ed0-6612-4f58-af45-da42174059c1/Amansala+chica+5+%281%29.png');" role="img" aria-label="Evening outdoor event gathering under the stars"></div>
+      <div class="experience-card__overlay"></div>
+      <div class="experience-card__content">
+        <span class="experience-card__label">Host</span>
+        <h3 class="experience-card__title">Private Events</h3>
+        <span class="experience-card__link">Explore</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ── Quote / Testimonial ────────────────────────────────── -->
+<section class="quote-section" aria-label="Guest testimonial">
+  <span class="quote-section__mark" aria-hidden="true">&ldquo;</span>
+  <blockquote data-reveal="up">
+    I've stayed in extraordinary places. CHI*KA is the only one I've dreamed about since leaving.
+  </blockquote>
+  <cite data-reveal="fade" data-delay="200">— Sofia M., New York &nbsp;&middot;&nbsp; Stayed December 2024</cite>
+</section>
+
+<!-- ── Full Bleed — Jungle image ──────────────────────────── -->
+<div class="full-bleed" role="img" aria-label="Tulum jungle at dawn">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/4b70c068-86b4-4b40-8ef6-d3945d485943/IMG_6275-HDR+%284%29.jpg"
+       class="full-bleed__img" alt="Lush Tulum jungle canopy at dawn" loading="lazy" width="1920" height="900">
+  <div class="full-bleed__overlay">
+    <div class="full-bleed__text" data-reveal="scale">
+      <span class="script" style="font-size:clamp(3rem,8vw,6rem);">The land speaks</span>
+      <h2>Ancient jungle. Modern ease. Timeless peace.</h2>
+    </div>
+  </div>
+</div>
+
+<!-- ── Wedding teaser ─────────────────────────────────────── -->
+<section class="split" aria-labelledby="wedding-teaser-heading">
+  <div class="split__image">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d9b92312-d807-4466-b4c0-1a0e1ee65895/2F0A7417+%283%29.jpg"
+         alt="Couples exchanging vows barefoot on the beach at CHI*KA" loading="lazy" width="960" height="700">
+  </div>
+  <div class="split__body" data-reveal="right">
+    <div class="split__text">
+      <span class="section-label">Weddings &amp; Ceremonies</span>
+      <div class="rule rule--left"></div>
+      <span class="eyebrow">Begin forever barefoot.</span>
+      <h2 id="wedding-teaser-heading">The kind of wedding<br>you've actually dreamed of.</h2>
+      <p>Intimate gatherings. Candlelit dinners under the palms. Up to 60 of your closest people, the sound of the ocean doing what it always does. We take care of everything — so you can simply be present.</p>
+      <a href="weddings.html" class="btn btn--primary">Plan Your Wedding</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Spa teaser ─────────────────────────────────────────── -->
+<section class="split split--reverse" aria-labelledby="spa-teaser-heading">
+  <div class="split__image">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/4ecb4cd4-08d9-47c7-b07e-681c62e6a0a1/Amansala+chica+6+%281%29.png"
+         alt="CHI*KA open-air spa treatment surrounded by jungle" loading="lazy" width="960" height="700">
+  </div>
+  <div class="split__body split__body--teal" data-reveal="left">
+    <div class="split__text">
+      <span class="section-label" style="color:rgba(255,255,255,0.5)">The Spa</span>
+      <div class="rule rule--left"></div>
+      <span class="eyebrow" style="color:var(--gold-lt)">Return to yourself.</span>
+      <h2 id="spa-teaser-heading" style="color:var(--white)">Ancient ritual.<br>Open air.<br>Deep quiet.</h2>
+      <p>Mayan healing traditions meet modern intention in a series of rituals designed to reconnect you to your body — and to the land beneath your feet.</p>
+      <a href="spa.html" class="btn btn--outline-light">Discover the Spa</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Buyout CTA ──────────────────────────────────────────── -->
+<section class="buyout-section" aria-labelledby="buyout-heading">
+  <div class="buyout-section__inner">
+    <span class="eyebrow">For the bold.</span>
+    <h2 id="buyout-heading">Take the whole thing.</h2>
+    <p>Twelve suites. One beach. Entirely yours. CHI*KA's full property buyout is designed for those who don't share well — and know it.</p>
+    <div class="rule"></div>
+    <button class="btn btn--outline-light" data-modal="booking">Inquire About Buyout</button>
+  </div>
+</section>
+
+<!-- ── Photo Mosaic ───────────────────────────────────────── -->
+<section aria-label="Property gallery">
+  <div class="mosaic">
+    <div class="mosaic__item">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b2155dac-e273-4b68-85b1-560f0a0e0428/Amansala+chica+7.png"
+           alt="Boho bedroom suite at CHI*KA Tulum" loading="lazy" width="900" height="600">
+    </div>
+    <div class="mosaic__item">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/9c940477-ce99-4753-861f-5d346c0c7b02/Amansala+chica+8+%281%29.png"
+           alt="Beach club sunset at CHI*KA" loading="lazy" width="600" height="400">
+    </div>
+    <div class="mosaic__item">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/5a099a7a-2139-46a1-b151-104d5912e870/IMG_6289+%283%29.jpg"
+           alt="Infinity pool at CHI*KA Tulum" loading="lazy" width="800" height="700">
+    </div>
+    <div class="mosaic__item">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1c8cacd4-cd33-479e-8186-e9f9f3df7f38/IMG_6294+%281%29.jpg"
+           alt="Caribbean beach outside CHI*KA Tulum" loading="lazy" width="600" height="400">
+    </div>
+    <div class="mosaic__item">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a6caf210-5d57-4bce-98c7-2801ff6beb6d/IMG_6306+%283%29.jpg"
+           alt="Wedding ceremony on the beach at CHI*KA" loading="lazy" width="900" height="400">
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-brand__logo"><span>Chi*ka</span> Tulum</a>
+      <p>A barefoot-luxury sanctuary on Mexico's Caribbean coast. Sister property to Amansala. Come as you are — leave transformed.</p>
+      <div class="footer-social" aria-label="Social media links">
+        <a href="#" aria-label="Instagram">Ig</a>
+        <a href="#" aria-label="Facebook">Fb</a>
+        <a href="#" aria-label="Pinterest">Pt</a>
+      </div>
+    </div>
+    <nav class="footer-col" aria-label="Explore footer navigation">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+        <li><a href="spa.html">The Spa</a></li>
+        <li><a href="beach-club.html">Beach Club</a></li>
+        <li><a href="weddings.html">Weddings</a></li>
+        <li><a href="events.html">Private Events</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label="Plan footer navigation">
+      <h4>Plan</h4>
+      <ul>
+        <li><a href="rooms.html#buyout">Property Buyout</a></li>
+        <li><a href="weddings.html#inquiry">Wedding Inquiry</a></li>
+        <li><a href="#" data-modal="booking">Book a Room</a></li>
+        <li><a href="#">Gift Cards</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </nav>
+    <address class="footer-col">
+      <h4>Find Us</h4>
+      <address>
+        Carretera Tulum–Boca Paila<br>
+        Km 7.5, Tulum<br>
+        Quintana Roo, Mexico<br><br>
+        <a href="tel:+529841234567">+52 984 123 4567</a><br>
+        <a href="mailto:hola@chikatulum.com">hola@chikatulum.com</a>
+      </address>
+    </address>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CHI*KA Tulum. All rights reserved. Sister to <a href="#">Amansala</a>.</p>
+    <p><a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a> &nbsp;&middot;&nbsp; <a href="#">Accessibility</a></p>
+  </div>
+</footer>
+
+<!-- ── Booking Modal ──────────────────────────────────────── -->
+<div class="modal-backdrop" aria-hidden="true"></div>
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal__header">
+    <h2 class="modal__title" id="modal-title">Reserve Your Stay</h2>
+    <button class="modal__close" aria-label="Close booking form">&times;</button>
+  </div>
+  <div class="modal__body">
+    <form class="modal-form booking-form" novalidate>
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="m-name">Full Name</label>
+          <input type="text" id="m-name" name="name" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="m-email">Email</label>
+          <input type="email" id="m-email" name="email" placeholder="your@email.com" required autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="m-checkin">Check-in</label>
+          <input type="date" id="m-checkin" name="checkin" required>
+        </div>
+        <div class="form-field">
+          <label for="m-checkout">Check-out</label>
+          <input type="date" id="m-checkout" name="checkout" required>
+        </div>
+        <div class="form-field">
+          <label for="m-room">Room Type</label>
+          <select id="m-room" name="room">
+            <option value="">Select a room…</option>
+            <option>Casa del Mar — Beachfront Suite</option>
+            <option>Palapa Loft — Garden View</option>
+            <option>Selva Bungalow — Jungle Edge</option>
+            <option>La Terraza — Rooftop Suite</option>
+            <option>Full Property Buyout</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="m-guests">Guests</label>
+          <select id="m-guests" name="guests">
+            <option>1 guest</option>
+            <option>2 guests</option>
+            <option>3 guests</option>
+            <option>4+ guests</option>
+          </select>
+        </div>
+        <div class="form-field form-field--full">
+          <label for="m-notes">Special Requests</label>
+          <textarea id="m-notes" name="notes" placeholder="Anniversaries, dietary needs, surprises we should know about…"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center; padding:1.1rem;">
+        Send Reservation Request
+      </button>
+      <p style="font-family:var(--font-serif);font-size:0.9rem;font-style:italic;color:var(--brown-lt);text-align:center;margin-top:var(--sp-4);">
+        We'll confirm availability within 24 hours.
+      </p>
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
