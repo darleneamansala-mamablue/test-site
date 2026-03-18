@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weddings &amp; Ceremonies — CHI*KA Tulum</title>
+  <meta name="description" content="Begin forever barefoot. CHI*KA Tulum hosts intimate weddings and ceremonies for up to 60 guests. Beachfront vows, candlelit jungle dinners, and an in-house team who takes care of everything.">
+  <link rel="canonical" href="https://chikatulum.com/weddings.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .wedding-story {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 640px;
+      background: var(--cream);
+    }
+    .wedding-story__text {
+      display: flex;
+      align-items: center;
+      padding: var(--sp-24) var(--sp-16);
+    }
+    .wedding-story__media {
+      position: relative;
+      overflow: hidden;
+    }
+    .wedding-story__media img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform var(--t-slow) var(--ease);
+    }
+    .wedding-story:hover .wedding-story__media img { transform: scale(1.04); }
+    .why-chika {
+      background: var(--sand);
+      padding: var(--sp-32) var(--sp-8);
+      text-align: center;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-10);
+      max-width: 980px;
+      margin: var(--sp-16) auto 0;
+    }
+    .why-item {
+      text-align: center;
+    }
+    .why-item__icon {
+      font-family: var(--font-script);
+      font-size: 2.5rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: var(--sp-4);
+    }
+    .why-item__title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin-bottom: var(--sp-3);
+    }
+    .why-item__desc {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--brown-lt);
+      line-height: 1.7;
+    }
+    .gallery-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      height: 600px;
+    }
+    .gallery-two-col__item {
+      overflow: hidden;
+    }
+    .gallery-two-col__item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform var(--t-slow) var(--ease);
+    }
+    .gallery-two-col__item:hover img { transform: scale(1.05); }
+    @media (max-width: 768px) {
+      .wedding-story { grid-template-columns: 1fr; }
+      .wedding-story__text { padding: var(--sp-16) var(--sp-6); }
+      .wedding-story__media { aspect-ratio: 4/3; }
+      .why-grid { grid-template-columns: 1fr; gap: var(--sp-8); }
+      .gallery-two-col { grid-template-columns: 1fr; height: auto; }
+      .gallery-two-col__item { aspect-ratio: 4/3; }
+      .wedding-packages { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo"><span>Chi*ka</span> Tulum</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="spa.html">Spa</a></li>
+      <li><a href="beach-club.html">Beach Club</a></li>
+      <li><a href="weddings.html">Weddings</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+    <a href="#inquiry" class="nav__cta">Wedding Inquiry</a>
+    <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav__mobile">
+  <ul class="nav__mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="spa.html">Spa</a></li>
+    <li><a href="beach-club.html">Beach Club</a></li>
+    <li><a href="weddings.html">Weddings</a></li>
+    <li><a href="events.html">Events</a></li>
+  </ul>
+  <div class="nav__mobile-cta">
+    <a href="#inquiry" class="btn btn--primary" style="width:100%;display:flex;justify-content:center;">Wedding Inquiry</a>
+  </div>
+</nav>
+<div class="nav__overlay"></div>
+
+<!-- Hero -->
+<section class="hero" aria-label="Weddings hero">
+  <div class="hero__bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/afb82958-4138-4f59-8928-4c96fa0ba4f1/IMG_6287-Pano+%282%29.jpg');" role="img" aria-label="Barefoot beach wedding ceremony at sunset on the Caribbean"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content container">
+    <p class="hero__tagline">Weddings &amp; Ceremonies at CHI*KA</p>
+    <span class="hero__script">Begin forever</span>
+    <h1 class="hero__title">barefoot.</h1>
+    <p class="hero__subtitle">Intimate ceremonies. Candlelit dinners. The ocean, always present.</p>
+    <div class="hero__ctas">
+      <a href="#inquiry" class="btn btn--primary">Begin the Conversation</a>
+      <a href="#packages" class="btn btn--outline-light">View Packages</a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- Story section -->
+<section class="wedding-story" aria-labelledby="wedding-story-heading">
+  <div class="wedding-story__text" data-reveal="left">
+    <div style="max-width:500px;">
+      <span class="section-label">Our philosophy</span>
+      <div class="rule rule--left"></div>
+      <span class="eyebrow">Less event. More magic.</span>
+      <h2 id="wedding-story-heading" style="font-family:var(--font-serif);font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:300;line-height:1.2;margin-bottom:var(--sp-6);">
+        The kind of wedding you've actually dreamed of.
+      </h2>
+      <p class="body-lg">
+        CHI*KA was made for this. The firefly lights. The sound of the sea beneath your vows. Your closest people — the ones who know the stories that matter. No ballroom. No timelines you didn't choose. Just you, the land, and the people you love.
+      </p>
+      <p class="body-reg" style="margin-top:var(--sp-4);">
+        We host intimate ceremonies of up to 60 guests. Our in-house team weaves together every detail — florals, food, ceremony, music — while you remain present for all of it.
+      </p>
+    </div>
+  </div>
+  <div class="wedding-story__media" data-reveal="right">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/bbb7e935-97be-498d-8777-69eb62aaf666/2F0A7402+%282%29.jpg"
+         alt="Couple walking barefoot on the beach at CHI*KA after their ceremony" loading="lazy" width="960" height="640">
+  </div>
+</section>
+
+<!-- Why CHI*KA for weddings -->
+<section class="why-chika" aria-labelledby="why-heading">
+  <span class="section-label" data-reveal="fade">Why CHI*KA</span>
+  <h2 id="why-heading" data-reveal="up" style="font-family:var(--font-serif);font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:300;margin-top:var(--sp-4);">
+    Everything is already beautiful here.<br>We just add you.
+  </h2>
+  <div class="why-grid">
+    <div class="why-item" data-reveal="up" data-delay="100">
+      <span class="why-item__icon">Intimate</span>
+      <h3 class="why-item__title">Maximum 60 Guests</h3>
+      <p class="why-item__desc">We believe the best weddings fit around a single long table. Every face is one you chose.</p>
+    </div>
+    <div class="why-item" data-reveal="up" data-delay="200">
+      <span class="why-item__icon">Curated</span>
+      <h3 class="why-item__title">Full Planning Team</h3>
+      <p class="why-item__desc">Our in-house coordinators, chefs, and artisans take care of everything. You just arrive.</p>
+    </div>
+    <div class="why-item" data-reveal="up" data-delay="300">
+      <span class="why-item__icon">Yours</span>
+      <h3 class="why-item__title">The Property is Yours</h3>
+      <p class="why-item__desc">During your wedding, CHI*KA is exclusively for your guests. Private, personal, yours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="quote-section">
+  <span class="quote-section__mark" aria-hidden="true">&ldquo;</span>
+  <blockquote data-reveal="up">
+    We didn't want a wedding. We wanted a night we'd never forget. CHI*KA gave us both — and something more.
+  </blockquote>
+  <cite data-reveal="fade" data-delay="200">— Clara &amp; Marco, married at CHI*KA, November 2024</cite>
+</section>
+
+<!-- Packages -->
+<section id="packages" style="background:var(--cream);padding:var(--sp-32) var(--sp-8);" aria-labelledby="packages-heading">
+  <div class="section-header section-header--center" data-reveal="up">
+    <span class="section-label">Packages &amp; Experiences</span>
+    <h2 id="packages-heading">Choose your ceremony</h2>
+    <p>Every package is a starting point. We build from there — around you, your people, and your vision.</p>
+  </div>
+
+  <div class="wedding-packages" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--sand-mid);max-width:1100px;margin:0 auto;" data-reveal="up" data-delay="100">
+
+    <div class="wedding-pkg">
+      <span class="wedding-pkg__icon">Barefoot</span>
+      <h3 class="wedding-pkg__name">The Ceremony</h3>
+      <p class="wedding-pkg__guests">Up to 20 guests</p>
+      <p class="wedding-pkg__desc">Pure, simple, sacred. A ceremony on the beach at golden hour — just your closest circle and the sea.</p>
+      <ul class="wedding-pkg__features">
+        <li>Beach ceremony setup</li>
+        <li>Florals &amp; décor</li>
+        <li>Officiant coordination</li>
+        <li>Welcome cocktails</li>
+        <li>Champagne toast</li>
+        <li>Photography liaison</li>
+      </ul>
+      <a href="#inquiry" class="btn-arrow">Inquire</a>
+    </div>
+
+    <div class="wedding-pkg" style="background:var(--teal);color:var(--white);">
+      <span class="wedding-pkg__icon" style="color:var(--gold-lt)">The Full Dream</span>
+      <h3 class="wedding-pkg__name" style="color:var(--white)">The Gathering</h3>
+      <p class="wedding-pkg__guests" style="color:rgba(255,255,255,0.6)">Up to 40 guests</p>
+      <p class="wedding-pkg__desc" style="color:rgba(255,255,255,0.75)">The ceremony. The dinner. The dancing. A full day threaded together by our team, so you can be completely present.</p>
+      <ul class="wedding-pkg__features" style="color:rgba(255,255,255,0.8);">
+        <li>Beach or jungle ceremony</li>
+        <li>Full florals &amp; styling</li>
+        <li>Multi-course dinner</li>
+        <li>Live music</li>
+        <li>Open bar</li>
+        <li>Dedicated coordinator</li>
+        <li>Room block for guests</li>
+      </ul>
+      <a href="#inquiry" class="btn btn--outline-light" style="display:inline-flex;">Inquire</a>
+    </div>
+
+    <div class="wedding-pkg">
+      <span class="wedding-pkg__icon">Everything</span>
+      <h3 class="wedding-pkg__name">The Full Takeover</h3>
+      <p class="wedding-pkg__guests">Up to 60 guests</p>
+      <p class="wedding-pkg__desc">CHI*KA, exclusively yours for the celebration. All 12 suites, the beach, the spa — three days of pure joy.</p>
+      <ul class="wedding-pkg__features">
+        <li>3-night property buyout</li>
+        <li>All 12 suites for guests</li>
+        <li>Full planning team</li>
+        <li>Welcome dinner</li>
+        <li>Ceremony &amp; reception</li>
+        <li>Farewell brunch</li>
+        <li>Spa treatments</li>
+        <li>Private chef</li>
+      </ul>
+      <a href="#inquiry" class="btn-arrow">Inquire</a>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<div class="gallery-two-col" aria-label="Wedding gallery">
+  <div class="gallery-two-col__item">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/fc1831a4-ecb0-45cb-8343-bec729c051b8/IMG_6329+%282%29.jpg"
+         alt="Beach ceremony at sunset" loading="lazy" width="960" height="600">
+  </div>
+  <div class="gallery-two-col__item">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/e28e1480-39d1-4c26-a9c0-ba6ad5e5dd28/IMG_6333+%281%29.jpg"
+         alt="Candlelit outdoor dinner reception at CHI*KA" loading="lazy" width="960" height="600">
+  </div>
+</div>
+
+<!-- Inquiry Form -->
+<section class="form-section form-section--teal" id="inquiry" aria-labelledby="inquiry-title">
+  <div class="container--narrow">
+    <div class="section-header section-header--center" data-reveal="up">
+      <span class="section-label" style="color:rgba(255,255,255,0.5);">Start here</span>
+      <h2 id="inquiry-title" style="color:var(--white);">Tell us about your dream day.</h2>
+      <p style="color:rgba(255,255,255,0.7);">Every wedding at CHI*KA begins with a conversation. Fill this in — we'll be in touch within 48 hours.</p>
+    </div>
+    <form class="booking-form" novalidate data-reveal="up" data-delay="100">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="w-name1">Your Name</label>
+          <input type="text" id="w-name1" placeholder="First &amp; last name" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="w-name2">Partner's Name</label>
+          <input type="text" id="w-name2" placeholder="First &amp; last name">
+        </div>
+        <div class="form-field">
+          <label for="w-email">Email</label>
+          <input type="email" id="w-email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="w-phone">Phone</label>
+          <input type="tel" id="w-phone" placeholder="+1 (000) 000-0000" autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label for="w-date">Wedding Date</label>
+          <input type="date" id="w-date">
+        </div>
+        <div class="form-field">
+          <label for="w-guests">Guest Count</label>
+          <select id="w-guests">
+            <option>Under 20 guests</option>
+            <option>20–40 guests</option>
+            <option>40–60 guests</option>
+          </select>
+        </div>
+        <div class="form-field form-field--full">
+          <label for="w-vision">Tell us your vision</label>
+          <textarea id="w-vision" placeholder="What does your perfect day look, feel, and sound like? The more you share, the better we can dream with you."></textarea>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <button type="submit" class="btn btn--outline-light" style="min-width:280px;justify-content:center;">Send Your Inquiry</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-brand__logo"><span>Chi*ka</span> Tulum</a>
+      <p>A barefoot-luxury sanctuary on Mexico's Caribbean coast. Sister property to Amansala.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">Ig</a>
+        <a href="#" aria-label="Facebook">Fb</a>
+        <a href="#" aria-label="Pinterest">Pt</a>
+      </div>
+    </div>
+    <nav class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+        <li><a href="spa.html">The Spa</a></li>
+        <li><a href="beach-club.html">Beach Club</a></li>
+        <li><a href="weddings.html">Weddings</a></li>
+        <li><a href="events.html">Private Events</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col">
+      <h4>Weddings</h4>
+      <ul>
+        <li><a href="#packages">View Packages</a></li>
+        <li><a href="#inquiry">Start Planning</a></li>
+        <li><a href="rooms.html#buyout">Property Buyout</a></li>
+      </ul>
+    </nav>
+    <address class="footer-col">
+      <h4>Contact</h4>
+      <address>
+        <a href="tel:+529841234567">+52 984 123 4567</a><br>
+        <a href="mailto:weddings@chikatulum.com">weddings@chikatulum.com</a><br><br>
+        Carretera Tulum–Boca Paila<br>Km 7.5, Tulum, Mexico
+      </address>
+    </address>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CHI*KA Tulum. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
