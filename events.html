@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Events — CHI*KA Tulum</title>
+  <meta name="description" content="Gather here. CHI*KA Tulum hosts intimate private events — retreats, brand activations, family gatherings, and celebrations — on the Caribbean coast of Mexico.">
+  <link rel="canonical" href="https://chikatulum.com/events.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .event-types {
+      background: var(--cream);
+      padding: var(--sp-32) var(--sp-8);
+    }
+    .event-types-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--sand-mid);
+      max-width: 1100px;
+      margin: var(--sp-16) auto 0;
+    }
+    .event-type-card {
+      background: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 400px;
+      overflow: hidden;
+    }
+    .event-type-card--full { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; }
+    .event-type-card__image {
+      position: relative;
+      overflow: hidden;
+    }
+    .event-type-card__image img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform var(--t-slow) var(--ease);
+    }
+    .event-type-card:hover .event-type-card__image img { transform: scale(1.05); }
+    .event-type-card__body {
+      padding: var(--sp-10) var(--sp-8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .event-type-card__name {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+      font-weight: 300;
+      margin-bottom: var(--sp-4);
+      line-height: 1.2;
+    }
+    .event-type-card__desc {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--brown-lt);
+      line-height: 1.7;
+      margin-bottom: var(--sp-6);
+    }
+    .event-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-4);
+    }
+    .event-spec {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      letter-spacing: 0.12em;
+      color: var(--brown-warm);
+      background: var(--sand);
+      padding: 0.3rem 0.8rem;
+    }
+    .coming-soon-banner {
+      background: var(--teal);
+      padding: var(--sp-24) var(--sp-8);
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .event-types-grid { grid-template-columns: 1fr; }
+      .event-type-card,
+      .event-type-card--full { grid-template-columns: 1fr; min-height: auto; grid-column: auto; }
+      .event-type-card__image { aspect-ratio: 16/9; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo"><span>Chi*ka</span> Tulum</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="spa.html">Spa</a></li>
+      <li><a href="beach-club.html">Beach Club</a></li>
+      <li><a href="weddings.html">Weddings</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+    <a href="#events-inquiry" class="nav__cta">Event Inquiry</a>
+    <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav__mobile">
+  <ul class="nav__mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="spa.html">Spa</a></li>
+    <li><a href="beach-club.html">Beach Club</a></li>
+    <li><a href="weddings.html">Weddings</a></li>
+    <li><a href="events.html">Events</a></li>
+  </ul>
+  <div class="nav__mobile-cta">
+    <a href="#events-inquiry" class="btn btn--primary" style="width:100%;display:flex;justify-content:center;">Event Inquiry</a>
+  </div>
+</nav>
+<div class="nav__overlay"></div>
+
+<!-- Hero -->
+<section class="hero hero--short" aria-label="Events hero">
+  <div class="hero__bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/ba8c24ee-a015-4570-b95c-a4b4cd87bc65/IMG_6287-Pano+%283%29.jpg');" role="img" aria-label="Outdoor evening event gathering under tropical canopy"></div>
+  <div class="hero__overlay hero__overlay--center"></div>
+  <div class="hero__content container text-center">
+    <p class="hero__tagline">Private Events at CHI*KA</p>
+    <span class="hero__script">Gather here.</span>
+    <h1 class="hero__title" style="margin:0 auto;text-align:center;">Some moments deserve<br>a perfect setting.</h1>
+  </div>
+</section>
+
+<!-- Coming soon banner -->
+<div class="coming-soon-banner" aria-label="Events calendar notice">
+  <span class="section-label" style="color:rgba(255,255,255,0.4);display:block;margin-bottom:var(--sp-4);" data-reveal="fade">Events calendar</span>
+  <p data-reveal="up" style="font-family:var(--font-serif);font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:300;font-style:italic;color:var(--white);max-width:700px;margin:0 auto var(--sp-8);line-height:1.6;">
+    CHI*KA's public events calendar — retreats, full-moon gatherings, chef dinners, sound baths — is being curated for 2025–2026. Add your email to be the first to know.
+  </p>
+  <form style="display:flex;gap:var(--sp-3);justify-content:center;flex-wrap:wrap;max-width:460px;margin:0 auto;" data-reveal="up" data-delay="100" novalidate>
+    <input type="email" placeholder="your@email.com" autocomplete="email"
+           style="flex:1;min-width:200px;padding:0.85rem 1rem;border:1px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:var(--white);font-family:var(--font-serif);font-size:1rem;outline:none;">
+    <button type="submit" class="btn btn--outline-light" style="white-space:nowrap;">Notify Me</button>
+  </form>
+</div>
+
+<!-- Private events intro -->
+<section class="intro" aria-labelledby="events-intro-heading">
+  <span class="intro__label" data-reveal="fade">Private events</span>
+  <span class="intro__script" data-reveal="up">The space is yours.</span>
+  <h2 id="events-intro-heading" class="intro__heading" data-reveal="up" data-delay="100">
+    CHI*KA for a night.<br>For a weekend. For a vision.
+  </h2>
+  <p class="intro__body" data-reveal="up" data-delay="200">
+    Whether it's a brand retreat that doesn't feel like a brand retreat, a milestone birthday that belongs entirely to you, or a three-day wellness immersion for twenty of the right people — CHI*KA has the setting, the team, and the intention to make it extraordinary.
+  </p>
+</section>
+
+<!-- Event types -->
+<section class="event-types" aria-labelledby="event-types-heading">
+  <div class="section-header section-header--center" data-reveal="up">
+    <span class="section-label">What we host</span>
+    <h2 id="event-types-heading">Events we were made for</h2>
+  </div>
+  <div class="event-types-grid">
+
+    <article class="event-type-card" data-reveal="fade">
+      <div class="event-type-card__image">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/17775cf7-f5bb-4bde-941f-e6cff9fdb848/IMG_6346+%283%29.jpg"
+             alt="Wellness retreat in the jungle at CHI*KA" loading="lazy" width="700" height="500">
+      </div>
+      <div class="event-type-card__body">
+        <span class="section-label">Retreats</span>
+        <h3 class="event-type-card__name">Wellness &amp; Yoga Retreats</h3>
+        <p class="event-type-card__desc">From morning breathwork to sunset cacao ceremonies. CHI*KA's land is built for deep restoration — and we can program an entire retreat around your vision.</p>
+        <div class="event-specs">
+          <span class="event-spec">Up to 24 guests</span>
+          <span class="event-spec">3–7 nights</span>
+          <span class="event-spec">Full programming</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="event-type-card" data-reveal="fade" data-delay="100">
+      <div class="event-type-card__image">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a5ef87f9-f3ba-4f19-8263-625e150b4529/IMG_6353+%282%29.jpg"
+             alt="Intimate corporate retreat gathering at CHI*KA" loading="lazy" width="700" height="500">
+      </div>
+      <div class="event-type-card__body">
+        <span class="section-label">Corporate</span>
+        <h3 class="event-type-card__name">Brand &amp; Creative Retreats</h3>
+        <p class="event-type-card__desc">Off-sites that actually work. No conference rooms. No PowerPoint sunsets. Ideas move differently when there's jungle on one side and ocean on the other.</p>
+        <div class="event-specs">
+          <span class="event-spec">Up to 30 guests</span>
+          <span class="event-spec">2–5 nights</span>
+          <span class="event-spec">AV on request</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="event-type-card event-type-card--full" data-reveal="fade">
+      <div class="event-type-card__image">
+        <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/0734e1fe-9155-4b02-96e9-a3a4af1929ec/IMG_6356+%285%29.jpg"
+             alt="Full property event setup at CHI*KA Tulum" loading="lazy" width="960" height="500">
+      </div>
+      <div class="event-type-card__body">
+        <span class="section-label">Full Buyout</span>
+        <h3 class="event-type-card__name">Milestone Celebrations &amp; Full Property Events</h3>
+        <p class="event-type-card__desc">Birthdays that deserve more than a dinner reservation. Family reunions. Anniversaries. The ones that need a whole place, all to themselves.</p>
+        <p class="event-type-card__desc">With a full property buyout, CHI*KA is exclusively yours — all 12 suites, the beach, the spa, the kitchen, and a private team dedicated to making it everything.</p>
+        <div class="event-specs">
+          <span class="event-spec">Up to 60 guests</span>
+          <span class="event-spec">2–7 nights</span>
+          <span class="event-spec">Full team</span>
+          <span class="event-spec">Bespoke programming</span>
+          <span class="event-spec">Private chef</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="quote-section" aria-label="Event testimonial">
+  <span class="quote-section__mark" aria-hidden="true">&ldquo;</span>
+  <blockquote data-reveal="up">
+    Our team came back from CHI*KA different. More open. More honest with each other. It's the kind of place that strips away the unnecessary — including distance between people.
+  </blockquote>
+  <cite data-reveal="fade" data-delay="200">— Rebeca T., Brand Director &nbsp;&middot;&nbsp; Corporate Retreat, March 2025</cite>
+</section>
+
+<!-- Inquiry form -->
+<section class="form-section form-section--sand" id="events-inquiry" aria-labelledby="events-form-title">
+  <div class="container--narrow">
+    <div class="section-header section-header--center" data-reveal="up">
+      <span class="section-label">Let's talk</span>
+      <h2 id="events-form-title">Tell us about your event.</h2>
+      <p>Every private event begins with a conversation. Give us the shape of your vision and we'll take it from there.</p>
+    </div>
+    <form class="booking-form" novalidate data-reveal="up" data-delay="100">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="ev-name">Your Name</label>
+          <input type="text" id="ev-name" placeholder="Full name" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="ev-org">Company / Organization</label>
+          <input type="text" id="ev-org" placeholder="Optional">
+        </div>
+        <div class="form-field">
+          <label for="ev-email">Email</label>
+          <input type="email" id="ev-email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="ev-phone">Phone</label>
+          <input type="tel" id="ev-phone" placeholder="+1 (000) 000-0000" autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label for="ev-type">Event Type</label>
+          <select id="ev-type">
+            <option value="">Select…</option>
+            <option>Wellness / Yoga Retreat</option>
+            <option>Corporate / Brand Retreat</option>
+            <option>Birthday / Milestone</option>
+            <option>Family Gathering</option>
+            <option>Full Property Buyout</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="ev-guests">Estimated Guests</label>
+          <select id="ev-guests">
+            <option>Under 15 guests</option>
+            <option>15–30 guests</option>
+            <option>30–60 guests</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="ev-date">Preferred Dates</label>
+          <input type="date" id="ev-date">
+        </div>
+        <div class="form-field">
+          <label for="ev-nights">Number of Nights</label>
+          <select id="ev-nights">
+            <option>1 night</option>
+            <option>2–3 nights</option>
+            <option>4–7 nights</option>
+            <option>1+ week</option>
+          </select>
+        </div>
+        <div class="form-field form-field--full">
+          <label for="ev-vision">Describe your vision</label>
+          <textarea id="ev-vision" placeholder="What kind of experience are you creating? What matters most? The more detail, the better we can dream with you."></textarea>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <button type="submit" class="btn btn--primary" style="min-width:280px;justify-content:center;">Send Inquiry</button>
+      </div>
+      <p style="font-family:var(--font-serif);font-size:0.9rem;font-style:italic;color:var(--brown-lt);text-align:center;margin-top:var(--sp-4);">
+        We respond to every inquiry personally within 48 hours.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-brand__logo"><span>Chi*ka</span> Tulum</a>
+      <p>A barefoot-luxury sanctuary on Mexico's Caribbean coast. Sister property to Amansala.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">Ig</a>
+        <a href="#" aria-label="Facebook">Fb</a>
+        <a href="#" aria-label="Pinterest">Pt</a>
+      </div>
+    </div>
+    <nav class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+        <li><a href="spa.html">The Spa</a></li>
+        <li><a href="beach-club.html">Beach Club</a></li>
+        <li><a href="weddings.html">Weddings</a></li>
+        <li><a href="events.html">Private Events</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col">
+      <h4>Events</h4>
+      <ul>
+        <li><a href="#event-types">Types of Events</a></li>
+        <li><a href="#events-inquiry">Event Inquiry</a></li>
+        <li><a href="rooms.html#buyout">Property Buyout</a></li>
+        <li><a href="weddings.html">Weddings</a></li>
+      </ul>
+    </nav>
+    <address class="footer-col">
+      <h4>Contact</h4>
+      <address>
+        <a href="mailto:events@chikatulum.com">events@chikatulum.com</a><br>
+        <a href="tel:+529841234567">+52 984 123 4567</a><br><br>
+        Carretera Tulum–Boca Paila<br>Km 7.5, Tulum, Mexico
+      </address>
+    </address>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CHI*KA Tulum. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
