@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rooms &amp; Suites — CHI*KA Tulum</title>
+  <meta name="description" content="Twelve intimate suites designed to feel like your private corner of Tulum. Open-air architecture, curated interiors, ocean sound always present. Book your room at CHI*KA Tulum.">
+  <link rel="canonical" href="https://chikatulum.com/rooms.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .rooms-intro {
+      background: var(--cream);
+      padding: var(--sp-32) var(--sp-8);
+      text-align: center;
+    }
+    .rooms-intro h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: var(--sp-6);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .amenities-strip {
+      background: var(--sand);
+      padding: var(--sp-10) var(--sp-8);
+      text-align: center;
+    }
+    .amenities-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--sp-6) var(--sp-10);
+      max-width: 900px;
+      margin: var(--sp-6) auto 0;
+    }
+    .amenity {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--brown-warm);
+    }
+    .amenity::before {
+      content: '◦';
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+    /* Rooms grid override for this page */
+    .rooms-grid-page {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2px;
+      background: var(--sand-mid);
+    }
+    .room-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+      background: var(--cream);
+    }
+    .room-row:nth-child(even) { direction: rtl; }
+    .room-row:nth-child(even) > * { direction: ltr; }
+    .room-row__image {
+      position: relative;
+      overflow: hidden;
+    }
+    .room-row__image img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform var(--t-slow) var(--ease);
+    }
+    .room-row:hover .room-row__image img { transform: scale(1.04); }
+    .room-row__body {
+      display: flex;
+      align-items: center;
+      padding: var(--sp-16) var(--sp-12);
+    }
+    .room-row__inner { max-width: 480px; }
+    .room-row__badge {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--terracotta);
+      padding: 0.3rem 0.8rem;
+      display: inline-block;
+      margin-bottom: var(--sp-6);
+    }
+    .room-row__name {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: var(--sp-4);
+    }
+    .room-row__tagline {
+      font-family: var(--font-script);
+      font-size: 1.5rem;
+      color: var(--terracotta);
+      display: block;
+      margin-bottom: var(--sp-6);
+    }
+    .room-row__desc {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--brown-lt);
+      line-height: 1.75;
+      margin-bottom: var(--sp-8);
+    }
+    .room-row__meta {
+      display: flex;
+      gap: var(--sp-8);
+      margin-bottom: var(--sp-8);
+      flex-wrap: wrap;
+    }
+    .room-row__meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-1);
+    }
+    .room-row__meta-label {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--brown-lt);
+    }
+    .room-row__meta-value {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--espresso);
+    }
+    .room-row__features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2) var(--sp-3);
+      margin-bottom: var(--sp-8);
+    }
+    .tag {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      color: var(--brown-warm);
+      background: var(--sand);
+      padding: 0.25rem 0.7rem;
+      display: inline-block;
+    }
+    @media (max-width: 768px) {
+      .room-row { grid-template-columns: 1fr; direction: ltr !important; min-height: auto; }
+      .room-row:nth-child(even) { direction: ltr; }
+      .room-row__image { aspect-ratio: 4/3; }
+      .room-row__body { padding: var(--sp-10) var(--sp-6); }
+      .room-row__inner { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo"><span>Chi*ka</span> Tulum</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="spa.html">Spa</a></li>
+      <li><a href="beach-club.html">Beach Club</a></li>
+      <li><a href="weddings.html">Weddings</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+    <button class="nav__cta" data-modal="booking">Book a Stay</button>
+    <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav__mobile">
+  <ul class="nav__mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="spa.html">Spa</a></li>
+    <li><a href="beach-club.html">Beach Club</a></li>
+    <li><a href="weddings.html">Weddings</a></li>
+    <li><a href="events.html">Events</a></li>
+  </ul>
+  <div class="nav__mobile-cta">
+    <button class="btn btn--primary" style="width:100%;justify-content:center;" data-modal="booking">Book a Stay</button>
+  </div>
+</nav>
+<div class="nav__overlay"></div>
+
+<!-- Hero -->
+<section class="hero hero--short" aria-label="Rooms hero">
+  <div class="hero__bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/ae930c45-72a7-46f0-8572-adda1f763305/Amansala+chica+9+%281%29.png');" role="img" aria-label="Elegant boho suite interior at CHI*KA Tulum"></div>
+  <div class="hero__overlay hero__overlay--center"></div>
+  <div class="hero__content container text-center">
+    <p class="hero__tagline">Rooms &amp; Suites</p>
+    <span class="hero__script">Your corner of Tulum.</span>
+    <h1 class="hero__title" style="margin: 0 auto; text-align:center;">Twelve rooms,<br>each one a world of its own.</h1>
+  </div>
+</section>
+
+<!-- Intro -->
+<section class="rooms-intro">
+  <span class="section-label" data-reveal="fade">The suites</span>
+  <h2 data-reveal="up" style="font-family:var(--font-serif);font-size:clamp(1.75rem,4vw,3rem);font-weight:300;margin:var(--sp-4) auto var(--sp-6);max-width:700px;line-height:1.3;">
+    Every room is open to the air, the sound, and the light.
+  </h2>
+  <p class="body-lg" data-reveal="up" data-delay="100" style="max-width:620px;margin:0 auto var(--sp-8);">
+    No televisions. No clocks. Just crafted interiors, the sound of the sea, and everything you need — and nothing you don't.
+  </p>
+  <a href="#all-rooms" class="btn-arrow" data-reveal="fade" data-delay="200">See all rooms</a>
+</section>
+
+<!-- Amenities strip -->
+<div class="amenities-strip">
+  <span class="section-label">All rooms include</span>
+  <div class="amenities-list">
+    <span class="amenity">Ocean or jungle view</span>
+    <span class="amenity">King bed</span>
+    <span class="amenity">Outdoor shower</span>
+    <span class="amenity">Artisan linens</span>
+    <span class="amenity">Minibar</span>
+    <span class="amenity">Concierge</span>
+    <span class="amenity">Daily breakfast</span>
+    <span class="amenity">Beach access</span>
+    <span class="amenity">Complimentary yoga</span>
+    <span class="amenity">Spa access</span>
+  </div>
+</div>
+
+<!-- All Rooms -->
+<section id="all-rooms" class="rooms-grid-page" aria-label="All rooms and suites">
+
+  <!-- Room 1: Casa del Mar -->
+  <article class="room-row" data-reveal="fade">
+    <div class="room-row__image">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b74ce68d-ec30-4c00-90c5-d59e25956ed6/IMG_6307+%283%29.jpg"
+           alt="Casa del Mar suite with ocean-facing terrace" loading="lazy" width="960" height="640">
+    </div>
+    <div class="room-row__body">
+      <div class="room-row__inner">
+        <span class="room-row__badge">Beachfront</span>
+        <h2 class="room-row__name">Casa del Mar</h2>
+        <span class="room-row__tagline">The ocean is your wallpaper.</span>
+        <p class="room-row__desc">Our most sought-after suite opens directly to the Caribbean. A king bed faces the sea, a private terrace invites long mornings, and the sound of waves replaces every alarm you've ever set.</p>
+        <div class="room-row__meta">
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">Size</span>
+            <span class="room-row__meta-value">75 m²</span>
+          </div>
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">Occupancy</span>
+            <span class="room-row__meta-value">Up to 2</span>
+          </div>
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">From</span>
+            <span class="room-row__meta-value">$650 / night</span>
+          </div>
+        </div>
+        <div class="room-row__features">
+          <span class="tag">Private terrace</span>
+          <span class="tag">Beachfront</span>
+          <span class="tag">Outdoor shower</span>
+          <span class="tag">King bed</span>
+          <span class="tag">Ocean view</span>
+        </div>
+        <button class="btn btn--primary" data-modal="booking">Reserve</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Room 2: Palapa Loft -->
+  <article class="room-row" data-reveal="fade">
+    <div class="room-row__image">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/a4b495eb-24da-424f-9526-43fb3d6e6c9b/IMG_6308+%282%29.jpg"
+           alt="Palapa Loft boho interior with thatched ceiling" loading="lazy" width="960" height="640">
+    </div>
+    <div class="room-row__body">
+      <div class="room-row__inner">
+        <span class="room-row__badge">Garden View</span>
+        <h2 class="room-row__name">Palapa Loft</h2>
+        <span class="room-row__tagline">A nest in the trees.</span>
+        <p class="room-row__desc">A soaring thatched palapa ceiling, an open-air bath, and a hammock made for reading one more chapter. Garden views, morning birdsong, and the feeling of being held by something ancient.</p>
+        <div class="room-row__meta">
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">Size</span>
+            <span class="room-row__meta-value">58 m²</span>
+          </div>
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">Occupancy</span>
+            <span class="room-row__meta-value">Up to 2</span>
+          </div>
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">From</span>
+            <span class="room-row__meta-value">$480 / night</span>
+          </div>
+        </div>
+        <div class="room-row__features">
+          <span class="tag">Palapa ceiling</span>
+          <span class="tag">Open-air bath</span>
+          <span class="tag">Hammock</span>
+          <span class="tag">Garden view</span>
+        </div>
+        <button class="btn btn--primary" data-modal="booking">Reserve</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Room 3: Selva Bungalow -->
+  <article class="room-row" data-reveal="fade">
+    <div class="room-row__image">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/b2365280-924a-4e7a-9e81-dd2bd54ff932/IMG_6317-HDR+%284%29.jpg"
+           alt="Selva Bungalow surrounded by jungle foliage" loading="lazy" width="960" height="640">
+    </div>
+    <div class="room-row__body">
+      <div class="room-row__inner">
+        <span class="room-row__badge">Jungle Edge</span>
+        <h2 class="room-row__name">Selva Bungalow</h2>
+        <span class="room-row__tagline">Hidden. Wild. Yours.</span>
+        <p class="room-row__desc">Tucked into the jungle's edge, this bungalow is for those who crave total immersion. A hammock porch. Cenote access steps away. Night sounds that remind you the world is alive.</p>
+        <div class="room-row__meta">
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">Size</span>
+            <span class="room-row__meta-value">52 m²</span>
+          </div>
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">Occupancy</span>
+            <span class="room-row__meta-value">Up to 2</span>
+          </div>
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">From</span>
+            <span class="room-row__meta-value">$420 / night</span>
+          </div>
+        </div>
+        <div class="room-row__features">
+          <span class="tag">Jungle views</span>
+          <span class="tag">Cenote access</span>
+          <span class="tag">Hammock porch</span>
+          <span class="tag">Private</span>
+        </div>
+        <button class="btn btn--primary" data-modal="booking">Reserve</button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Room 4: La Terraza -->
+  <article class="room-row" data-reveal="fade">
+    <div class="room-row__image">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1c9e3ab2-bdec-4885-ac88-59ccfc913248/IMG_6320+%283%29.jpg"
+           alt="La Terraza rooftop suite with panoramic sea views" loading="lazy" width="960" height="640">
+    </div>
+    <div class="room-row__body">
+      <div class="room-row__inner">
+        <span class="room-row__badge">Rooftop Suite</span>
+        <h2 class="room-row__name">La Terraza</h2>
+        <span class="room-row__tagline">The sky is your ceiling.</span>
+        <p class="room-row__desc">Our crown jewel. A panoramic rooftop terrace, outdoor shower under the open sky, and 360° views of jungle, sea and stars. Made for those who prefer their sunsets unobstructed.</p>
+        <div class="room-row__meta">
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">Size</span>
+            <span class="room-row__meta-value">90 m²</span>
+          </div>
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">Occupancy</span>
+            <span class="room-row__meta-value">Up to 2</span>
+          </div>
+          <div class="room-row__meta-item">
+            <span class="room-row__meta-label">From</span>
+            <span class="room-row__meta-value">$780 / night</span>
+          </div>
+        </div>
+        <div class="room-row__features">
+          <span class="tag">Panoramic views</span>
+          <span class="tag">Rooftop terrace</span>
+          <span class="tag">Sky shower</span>
+          <span class="tag">Sunrise &amp; sunset</span>
+        </div>
+        <button class="btn btn--primary" data-modal="booking">Reserve</button>
+      </div>
+    </div>
+  </article>
+
+</section>
+
+<!-- Buyout Section -->
+<section class="buyout-section" id="buyout" aria-labelledby="buyout-title">
+  <div class="buyout-section__inner">
+    <span class="section-label" style="color:rgba(255,255,255,0.4);display:block;margin-bottom:var(--sp-4);" data-reveal="fade">For the exclusive</span>
+    <span class="eyebrow">The whole property.</span>
+    <h2 id="buyout-title" data-reveal="up">CHI*KA, entirely yours.</h2>
+    <p data-reveal="up" data-delay="100">
+      Twelve suites. The beach club. The spa. Every palapa, every hammock, every stone path through the jungle. Ideal for families, retreats, celebrations, or anyone who simply doesn't share well.
+    </p>
+    <div class="rule"></div>
+    <div style="display:flex;gap:var(--sp-4);justify-content:center;flex-wrap:wrap;" data-reveal="up" data-delay="200">
+      <button class="btn btn--outline-light" data-modal="booking">Request Buyout Pricing</button>
+    </div>
+    <p style="font-family:var(--font-serif);font-size:1rem;font-style:italic;color:rgba(255,255,255,0.5);margin-top:var(--sp-6);">
+      Buyout rates available from 3-night minimum. Includes all 12 suites, private staffing, and curated programming.
+    </p>
+  </div>
+</section>
+
+<!-- Booking form -->
+<section class="form-section" aria-labelledby="book-direct-title">
+  <div class="container--narrow">
+    <div class="section-header section-header--center" data-reveal="up">
+      <span class="section-label">Book direct</span>
+      <h2 id="book-direct-title">Reserve your room</h2>
+      <p>We respond to every inquiry personally, within 24 hours.</p>
+    </div>
+    <form class="booking-form" novalidate data-reveal="up" data-delay="100">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="r-name">Full Name</label>
+          <input type="text" id="r-name" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="r-email">Email</label>
+          <input type="email" id="r-email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="r-in">Arrival</label>
+          <input type="date" id="r-in">
+        </div>
+        <div class="form-field">
+          <label for="r-out">Departure</label>
+          <input type="date" id="r-out">
+        </div>
+        <div class="form-field">
+          <label for="r-room">Preferred Room</label>
+          <select id="r-room">
+            <option value="">Any room</option>
+            <option>Casa del Mar</option>
+            <option>Palapa Loft</option>
+            <option>Selva Bungalow</option>
+            <option>La Terraza</option>
+            <option>Full Property Buyout</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="r-guests">Guests</label>
+          <select id="r-guests">
+            <option>1 guest</option>
+            <option>2 guests</option>
+            <option>3 guests</option>
+            <option>4+ guests</option>
+          </select>
+        </div>
+        <div class="form-field form-field--full">
+          <label for="r-message">Anything we should know?</label>
+          <textarea id="r-message" placeholder="Special occasions, dietary requirements, dream experiences…"></textarea>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <button type="submit" class="btn btn--primary" style="min-width:280px;justify-content:center;">Send Inquiry</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-brand__logo"><span>Chi*ka</span> Tulum</a>
+      <p>A barefoot-luxury sanctuary on Mexico's Caribbean coast. Sister property to Amansala.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">Ig</a>
+        <a href="#" aria-label="Facebook">Fb</a>
+        <a href="#" aria-label="Pinterest">Pt</a>
+      </div>
+    </div>
+    <nav class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+        <li><a href="spa.html">The Spa</a></li>
+        <li><a href="beach-club.html">Beach Club</a></li>
+        <li><a href="weddings.html">Weddings</a></li>
+        <li><a href="events.html">Private Events</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col">
+      <h4>Plan</h4>
+      <ul>
+        <li><a href="rooms.html#buyout">Property Buyout</a></li>
+        <li><a href="weddings.html">Wedding Inquiry</a></li>
+        <li><a href="#" data-modal="booking">Book a Room</a></li>
+      </ul>
+    </nav>
+    <address class="footer-col">
+      <h4>Find Us</h4>
+      <address>
+        Carretera Tulum–Boca Paila<br>Km 7.5, Tulum, Mexico<br><br>
+        <a href="mailto:hola@chikatulum.com">hola@chikatulum.com</a>
+      </address>
+    </address>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CHI*KA Tulum. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a></p>
+  </div>
+</footer>
+
+<!-- Booking Modal -->
+<div class="modal-backdrop"></div>
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal__header">
+    <h2 class="modal__title" id="modal-title">Reserve Your Stay</h2>
+    <button class="modal__close" aria-label="Close">&times;</button>
+  </div>
+  <div class="modal__body">
+    <form class="modal-form booking-form" novalidate>
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="m-name">Full Name</label>
+          <input type="text" id="m-name" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="m-email">Email</label>
+          <input type="email" id="m-email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="m-in">Check-in</label>
+          <input type="date" id="m-in">
+        </div>
+        <div class="form-field">
+          <label for="m-out">Check-out</label>
+          <input type="date" id="m-out">
+        </div>
+        <div class="form-field form-field--full">
+          <label for="m-room">Room</label>
+          <select id="m-room">
+            <option value="">Select…</option>
+            <option>Casa del Mar</option>
+            <option>Palapa Loft</option>
+            <option>Selva Bungalow</option>
+            <option>La Terraza</option>
+            <option>Full Property Buyout</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">Send Request</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
