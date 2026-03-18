@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Spa — CHI*KA Tulum</title>
+  <meta name="description" content="Return to yourself. CHI*KA's open-air spa draws on ancient Mayan healing traditions to restore body, mind, and spirit beneath the Tulum canopy.">
+  <link rel="canonical" href="https://chikatulum.com/spa.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .ritual-timeline {
+      background: var(--cream);
+      padding: var(--sp-32) var(--sp-8);
+    }
+    .timeline {
+      max-width: 800px;
+      margin: var(--sp-16) auto 0;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 24px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--sand-mid);
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: var(--sp-6);
+      margin-bottom: var(--sp-10);
+      padding-bottom: var(--sp-10);
+      border-bottom: 1px solid var(--sand);
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-dot {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--sand);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--gold);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .timeline-content h3 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: var(--sp-2);
+    }
+    .timeline-content p {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--brown-lt);
+      line-height: 1.7;
+    }
+    .ingredients-section {
+      background: var(--teal);
+      padding: var(--sp-24) var(--sp-8);
+      text-align: center;
+    }
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-8);
+      max-width: 900px;
+      margin: var(--sp-12) auto 0;
+    }
+    .ingredient {
+      text-align: center;
+    }
+    .ingredient__name {
+      font-family: var(--font-script);
+      font-size: 1.6rem;
+      color: var(--gold-lt);
+      display: block;
+      margin-bottom: var(--sp-2);
+    }
+    .ingredient__desc {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    @media (max-width: 768px) {
+      .ingredients-grid { grid-template-columns: repeat(2, 1fr); }
+      .treatments-grid { grid-template-columns: 1fr !important; }
+      .timeline::before { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo"><span>Chi*ka</span> Tulum</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="spa.html">Spa</a></li>
+      <li><a href="beach-club.html">Beach Club</a></li>
+      <li><a href="weddings.html">Weddings</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+    <a href="#book-spa" class="nav__cta">Book a Treatment</a>
+    <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav__mobile">
+  <ul class="nav__mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="spa.html">Spa</a></li>
+    <li><a href="beach-club.html">Beach Club</a></li>
+    <li><a href="weddings.html">Weddings</a></li>
+    <li><a href="events.html">Events</a></li>
+  </ul>
+  <div class="nav__mobile-cta">
+    <a href="#book-spa" class="btn btn--primary" style="width:100%;display:flex;justify-content:center;">Book a Treatment</a>
+  </div>
+</nav>
+<div class="nav__overlay"></div>
+
+<!-- Hero -->
+<section class="hero" aria-label="Spa hero">
+  <div class="hero__bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/1400ee51-1076-42be-81ec-2a3806a94c75/Amansala+chica+10++%281%29.png');" role="img" aria-label="Open-air spa treatment room at CHI*KA Tulum surrounded by jungle"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content container">
+    <p class="hero__tagline">The Spa at CHI*KA</p>
+    <span class="hero__script">Return to yourself.</span>
+    <h1 class="hero__title">Ancient ritual.<br>Open air.<br>Deep quiet.</h1>
+    <p class="hero__subtitle">Mayan healing traditions meet modern intention — beneath the jungle canopy, by the sea.</p>
+    <div class="hero__ctas">
+      <a href="#treatments" class="btn btn--primary">View Treatments</a>
+      <a href="#book-spa" class="btn btn--outline-light">Book a Session</a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- Philosophy -->
+<section class="split" aria-labelledby="spa-philosophy-heading">
+  <div class="split__image" data-reveal="left">
+    <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/785306fa-561c-4e23-8b07-ee5f9e8b5c01/Amansala+chica+11+%281%29.png"
+         alt="Therapist performing a traditional Mayan healing ritual" loading="lazy" width="960" height="700">
+  </div>
+  <div class="split__body split__body--cream" data-reveal="right">
+    <div class="split__text">
+      <span class="section-label">Our philosophy</span>
+      <div class="rule rule--left"></div>
+      <span class="eyebrow">The land heals.</span>
+      <h2 id="spa-philosophy-heading">We simply get out of the way.</h2>
+      <p>Our open-air spa is a refuge built on a single belief: that the body knows how to heal, and that nature knows how to help. Ancient Mayan wisdom — cacao, copal, cenote water, obsidian — woven into rituals designed to bring you back to yourself.</p>
+      <p style="margin-top:var(--sp-4);">Every treatment is performed by certified Mayan healers and wellness practitioners who were born here, who understand this land, and who carry traditions passed across generations.</p>
+      <a href="#treatments" class="btn-arrow">See treatments</a>
+    </div>
+  </div>
+</section>
+
+<!-- Ritual experience (what to expect) -->
+<section class="ritual-timeline" aria-labelledby="ritual-heading">
+  <div class="section-header section-header--center" data-reveal="up">
+    <span class="section-label">The spa experience</span>
+    <h2 id="ritual-heading">What to expect when you arrive</h2>
+    <p>Your spa day at CHI*KA unfolds at its own pace. This is not a schedule — it's a rhythm.</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item" data-reveal="up">
+      <div class="timeline-dot">i</div>
+      <div class="timeline-content">
+        <h3>Arrival &amp; Intention Setting</h3>
+        <p>You're welcomed with a warm herbal infusion and a quiet intake conversation with your healer — no intake forms, just a conversation about what you're carrying and what you'd like to release.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-reveal="up" data-delay="100">
+      <div class="timeline-dot">ii</div>
+      <div class="timeline-content">
+        <h3>Cleansing Ritual</h3>
+        <p>A copal smoke cleansing opens the session, clearing energy and preparing the body to receive. Ancient. Quiet. Immediate.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-reveal="up" data-delay="200">
+      <div class="timeline-dot">iii</div>
+      <div class="timeline-content">
+        <h3>Your Treatment</h3>
+        <p>Whether a deep-tissue massage, a cacao ceremony, or our signature cenote ritual — performed with intention, presence, and an hour free from time.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-reveal="up" data-delay="300">
+      <div class="timeline-dot">iv</div>
+      <div class="timeline-content">
+        <h3>Integration &amp; Rest</h3>
+        <p>Post-treatment, a private hammock space is yours for as long as you need. Herbal tea, silence, and the sound of the jungle doing its work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sacred ingredients -->
+<section class="ingredients-section" aria-labelledby="ingredients-heading">
+  <span class="section-label" style="color:rgba(255,255,255,0.4)" data-reveal="fade">Our ingredients</span>
+  <h2 id="ingredients-heading" data-reveal="up" style="font-family:var(--font-serif);font-size:clamp(1.75rem,3vw,2.75rem);font-weight:300;color:var(--white);margin-top:var(--sp-4);">
+    The land in every ritual.
+  </h2>
+  <div class="ingredients-grid" data-reveal="up" data-delay="100">
+    <div class="ingredient">
+      <span class="ingredient__name">Cacao</span>
+      <span class="ingredient__desc">Heart-opening ceremony</span>
+    </div>
+    <div class="ingredient">
+      <span class="ingredient__name">Copal</span>
+      <span class="ingredient__desc">Cleansing smoke ritual</span>
+    </div>
+    <div class="ingredient">
+      <span class="ingredient__name">Cenote water</span>
+      <span class="ingredient__desc">Sacred underground source</span>
+    </div>
+    <div class="ingredient">
+      <span class="ingredient__name">Obsidian</span>
+      <span class="ingredient__desc">Volcanic stone healing</span>
+    </div>
+    <div class="ingredient">
+      <span class="ingredient__name">Chaya</span>
+      <span class="ingredient__desc">Mayan superfood wraps</span>
+    </div>
+    <div class="ingredient">
+      <span class="ingredient__name">Wild honey</span>
+      <span class="ingredient__desc">Native Melipona bee</span>
+    </div>
+    <div class="ingredient">
+      <span class="ingredient__name">Achiote</span>
+      <span class="ingredient__desc">Ancient pigment body ritual</span>
+    </div>
+    <div class="ingredient">
+      <span class="ingredient__name">Xtabentún</span>
+      <span class="ingredient__desc">Sacred anise honey liqueur</span>
+    </div>
+  </div>
+</section>
+
+<!-- Treatments -->
+<section id="treatments" style="background:var(--cream);padding:var(--sp-32) var(--sp-8);" aria-labelledby="treatments-heading">
+  <div class="section-header section-header--center" data-reveal="up">
+    <span class="section-label">The menu</span>
+    <h2 id="treatments-heading">Our treatments</h2>
+    <p>Each ritual is 60–120 minutes and performed in our open-air jungle pavilions. All prices in USD.</p>
+  </div>
+
+  <div class="treatments-grid" style="max-width:1200px;margin:0 auto;">
+    <article class="treatment-card" data-reveal="up" data-delay="100">
+      <span class="treatment-card__number">01</span>
+      <h3 class="treatment-card__name">Cacao &amp; Copal Ceremony</h3>
+      <span class="treatment-card__duration">90 minutes</span>
+      <p class="treatment-card__desc">An opening ritual for those arriving in a hurry. Ceremonial cacao, copal cleansing, and a guided breathwork session return you to your body.</p>
+      <span class="treatment-card__price">From $145</span>
+    </article>
+
+    <article class="treatment-card" data-reveal="up" data-delay="200">
+      <span class="treatment-card__number">02</span>
+      <h3 class="treatment-card__name">Mayan Obsidian Massage</h3>
+      <span class="treatment-card__duration">75 minutes</span>
+      <p class="treatment-card__desc">Volcanic obsidian stones, warmed and cooled in alternation, work deep into muscle tissue using ancestral massage techniques passed through Mayan lineage.</p>
+      <span class="treatment-card__price">From $175</span>
+    </article>
+
+    <article class="treatment-card" data-reveal="up" data-delay="300">
+      <span class="treatment-card__number">03</span>
+      <h3 class="treatment-card__name">Cenote Purification Ritual</h3>
+      <span class="treatment-card__duration">120 minutes</span>
+      <p class="treatment-card__desc">Sacred cenote water, achiote body painting, and a full-body wrap using wild jungle herbs. Ends with a private cenote immersion. Transformative.</p>
+      <span class="treatment-card__price">From $240</span>
+    </article>
+
+    <article class="treatment-card" data-reveal="up" data-delay="100">
+      <span class="treatment-card__number">04</span>
+      <h3 class="treatment-card__name">Wild Honey Body Treatment</h3>
+      <span class="treatment-card__duration">60 minutes</span>
+      <p class="treatment-card__desc">Raw Melipona honey — the sacred bee of the Yucatán — used in a full-body exfoliation and mask that leaves skin impossibly soft.</p>
+      <span class="treatment-card__price">From $120</span>
+    </article>
+
+    <article class="treatment-card" data-reveal="up" data-delay="200">
+      <span class="treatment-card__number">05</span>
+      <h3 class="treatment-card__name">Deep Tissue Restore</h3>
+      <span class="treatment-card__duration">75 minutes</span>
+      <p class="treatment-card__desc">Slow, intentional deep-tissue work using warmed botanical oils. For bodies that have been carrying too much for too long.</p>
+      <span class="treatment-card__price">From $155</span>
+    </article>
+
+    <article class="treatment-card" data-reveal="up" data-delay="300">
+      <span class="treatment-card__number">06</span>
+      <h3 class="treatment-card__name">The Full Day Immersion</h3>
+      <span class="treatment-card__duration">Full Day</span>
+      <p class="treatment-card__desc">From cacao ceremony to sunset meditation — a bespoke day crafted entirely around you. Includes three treatments, jungle lunch, and cenote access.</p>
+      <span class="treatment-card__price">From $480</span>
+    </article>
+  </div>
+</section>
+
+<!-- Booking form -->
+<section class="form-section form-section--sand" id="book-spa" aria-labelledby="spa-book-title">
+  <div class="container--narrow">
+    <div class="section-header section-header--center" data-reveal="up">
+      <span class="section-label">Reserve a treatment</span>
+      <h2 id="spa-book-title">Book your ritual</h2>
+      <p>Spa treatments can be booked for hotel guests and outside visitors. We'll confirm within 24 hours.</p>
+    </div>
+    <form class="booking-form" novalidate data-reveal="up" data-delay="100">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="s-name">Full Name</label>
+          <input type="text" id="s-name" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="s-email">Email</label>
+          <input type="email" id="s-email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="s-date">Preferred Date</label>
+          <input type="date" id="s-date">
+        </div>
+        <div class="form-field">
+          <label for="s-time">Preferred Time</label>
+          <select id="s-time">
+            <option>Morning (8am–12pm)</option>
+            <option>Afternoon (12pm–4pm)</option>
+            <option>Sunset (4pm–7pm)</option>
+          </select>
+        </div>
+        <div class="form-field form-field--full">
+          <label for="s-treatment">Treatment</label>
+          <select id="s-treatment">
+            <option value="">Select a treatment…</option>
+            <option>Cacao &amp; Copal Ceremony</option>
+            <option>Mayan Obsidian Massage</option>
+            <option>Cenote Purification Ritual</option>
+            <option>Wild Honey Body Treatment</option>
+            <option>Deep Tissue Restore</option>
+            <option>Full Day Immersion</option>
+          </select>
+        </div>
+        <div class="form-field form-field--full">
+          <label for="s-notes">Anything we should know?</label>
+          <textarea id="s-notes" placeholder="Health conditions, intentions, preferences, special occasions…"></textarea>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <button type="submit" class="btn btn--primary" style="min-width:260px;justify-content:center;">Reserve Treatment</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-brand__logo"><span>Chi*ka</span> Tulum</a>
+      <p>A barefoot-luxury sanctuary on Mexico's Caribbean coast. Sister property to Amansala.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">Ig</a>
+        <a href="#" aria-label="Facebook">Fb</a>
+        <a href="#" aria-label="Pinterest">Pt</a>
+      </div>
+    </div>
+    <nav class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+        <li><a href="spa.html">The Spa</a></li>
+        <li><a href="beach-club.html">Beach Club</a></li>
+        <li><a href="weddings.html">Weddings</a></li>
+        <li><a href="events.html">Private Events</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col">
+      <h4>The Spa</h4>
+      <ul>
+        <li><a href="#treatments">View Treatments</a></li>
+        <li><a href="#book-spa">Book a Session</a></li>
+        <li><a href="rooms.html">Book a Room</a></li>
+      </ul>
+    </nav>
+    <address class="footer-col">
+      <h4>Contact</h4>
+      <address>
+        <a href="mailto:spa@chikatulum.com">spa@chikatulum.com</a><br>
+        <a href="tel:+529841234567">+52 984 123 4567</a><br><br>
+        Open daily 8am–7pm
+      </address>
+    </address>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CHI*KA Tulum. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
