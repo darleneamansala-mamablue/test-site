@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beach Club — CHI*KA Tulum</title>
+  <meta name="description" content="The day belongs to you. CHI*KA's beach club on Tulum's Caribbean coast — palapas, craft mezcal, fresh ceviche, and a philosophy that time is yours.">
+  <link rel="canonical" href="https://chikatulum.com/beach-club.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .bc-philosophy {
+      background: var(--cream);
+      padding: var(--sp-32) var(--sp-8);
+    }
+    .bc-philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-16);
+      align-items: center;
+      max-width: var(--max-content);
+      margin: 0 auto;
+    }
+    .bc-philosophy-image {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .bc-philosophy-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform var(--t-slow) var(--ease);
+    }
+    .bc-philosophy-image:hover img { transform: scale(1.04); }
+    .bc-time-strip {
+      background: var(--espresso);
+      padding: var(--sp-12) var(--sp-8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-16);
+      flex-wrap: wrap;
+    }
+    .bc-time-item {
+      text-align: center;
+    }
+    .bc-time-item__label {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      display: block;
+      margin-bottom: var(--sp-1);
+    }
+    .bc-time-item__value {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: var(--white);
+    }
+    .bc-time-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.15);
+    }
+    .palapa-info {
+      background: var(--sand);
+      padding: var(--sp-32) var(--sp-8);
+    }
+    .palapa-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--sand-mid);
+      margin-top: var(--sp-16);
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .palapa-card {
+      background: var(--cream);
+      padding: var(--sp-10) var(--sp-8);
+      text-align: center;
+    }
+    .palapa-card__title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: var(--sp-3);
+    }
+    .palapa-card__desc {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--brown-lt);
+      line-height: 1.7;
+      margin-bottom: var(--sp-6);
+    }
+    .palapa-card__price {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+    @media (max-width: 768px) {
+      .bc-philosophy-grid { grid-template-columns: 1fr; gap: var(--sp-8); }
+      .bc-time-strip { gap: var(--sp-8); }
+      .bc-time-divider { display: none; }
+      .palapa-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo"><span>Chi*ka</span> Tulum</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="spa.html">Spa</a></li>
+      <li><a href="beach-club.html">Beach Club</a></li>
+      <li><a href="weddings.html">Weddings</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+    <a href="#reserve-palapa" class="nav__cta">Reserve a Palapa</a>
+    <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav__mobile">
+  <ul class="nav__mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="spa.html">Spa</a></li>
+    <li><a href="beach-club.html">Beach Club</a></li>
+    <li><a href="weddings.html">Weddings</a></li>
+    <li><a href="events.html">Events</a></li>
+  </ul>
+  <div class="nav__mobile-cta">
+    <a href="#reserve-palapa" class="btn btn--primary" style="width:100%;display:flex;justify-content:center;">Reserve a Palapa</a>
+  </div>
+</nav>
+<div class="nav__overlay"></div>
+
+<!-- Hero -->
+<section class="hero" aria-label="Beach club hero">
+  <div class="hero__bg" style="background-image:url('https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/21b894d8-a0fd-4d01-a8a1-b169648c053f/IMG_6259-Pano+%282%29.jpg');" role="img" aria-label="CHI*KA beach club with Caribbean water and white sand"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content container">
+    <p class="hero__tagline">The Beach Club</p>
+    <span class="hero__script">The day belongs</span>
+    <h1 class="hero__title">to you.</h1>
+    <p class="hero__subtitle">Stake your palapa. Order a mezcal. Let morning become afternoon become something worth remembering.</p>
+    <div class="hero__ctas">
+      <a href="#reserve-palapa" class="btn btn--primary">Reserve a Palapa</a>
+      <a href="#menu" class="btn btn--outline-light">View the Menu</a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- Hours strip -->
+<div class="bc-time-strip" aria-label="Beach club hours and info">
+  <div class="bc-time-item">
+    <span class="bc-time-item__label">Open daily</span>
+    <span class="bc-time-item__value">10am — Sunset</span>
+  </div>
+  <div class="bc-time-divider" aria-hidden="true"></div>
+  <div class="bc-time-item">
+    <span class="bc-time-item__label">Kitchen</span>
+    <span class="bc-time-item__value">11am — 9pm</span>
+  </div>
+  <div class="bc-time-divider" aria-hidden="true"></div>
+  <div class="bc-time-item">
+    <span class="bc-time-item__label">Palapa reservation</span>
+    <span class="bc-time-item__value">From $80 / day</span>
+  </div>
+  <div class="bc-time-divider" aria-hidden="true"></div>
+  <div class="bc-time-item">
+    <span class="bc-time-item__label">Hotel guests</span>
+    <span class="bc-time-item__value">Always complimentary</span>
+  </div>
+</div>
+
+<!-- Philosophy section -->
+<section class="bc-philosophy" aria-labelledby="bc-phil-heading">
+  <div class="bc-philosophy-grid">
+    <div class="bc-philosophy-image" data-reveal="left">
+      <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/afd1708c-1db0-40d5-8272-d705369ad573/IMG_6334+%282%29.jpg"
+           alt="Beach club bar at CHI*KA with mezcal and fresh juice" loading="lazy" width="960" height="720">
+    </div>
+    <div data-reveal="right">
+      <span class="section-label">The philosophy</span>
+      <div class="rule rule--left"></div>
+      <span class="eyebrow">Not a facility.</span>
+      <h2 id="bc-phil-heading" style="font-family:var(--font-serif);font-size:clamp(1.75rem,3vw,2.75rem);font-weight:300;line-height:1.2;margin-bottom:var(--sp-6);">
+        CHI*KA's beach club<br>is a philosophy.
+      </h2>
+      <p class="body-lg">
+        There are no pool chairs lined up in formation. No reserved towel system. Just palapas spaced wide enough for actual privacy, a bar that makes things properly, and a kitchen that sources everything from within a hundred kilometres.
+      </p>
+      <p class="body-reg" style="margin-top:var(--sp-4);">
+        We're open to hotel guests and outside visitors — though if the vibe finds you, you might book a room before the day is done.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Full bleed beach image -->
+<div class="full-bleed" role="img" aria-label="Caribbean beach at CHI*KA Tulum">
+  <img src="https://images.squarespace-cdn.com/content/v1/63f3db8dfbb7eb30c2b0fb72/d2bf2af7-3a8f-45ce-8590-aafd1e81da42/IMG_6370-Pano+%284%29.jpg"
+       class="full-bleed__img" alt="Azure Caribbean waters meeting the white sand shore outside CHI*KA" loading="lazy" width="1920" height="900">
+  <div class="full-bleed__overlay">
+    <div class="full-bleed__text" data-reveal="scale">
+      <span class="script" style="font-size:clamp(2.5rem,7vw,5.5rem);">The sea is waiting</span>
+    </div>
+  </div>
+</div>
+
+<!-- Palapa section -->
+<section class="palapa-info" aria-labelledby="palapa-heading">
+  <div class="section-header section-header--center" data-reveal="up">
+    <span class="section-label">Reserve your spot</span>
+    <h2 id="palapa-heading">Choose your palapa</h2>
+    <p>Each palapa is a private world. Hotel guests have complimentary access — outside visitors can reserve day-use spots.</p>
+  </div>
+  <div class="palapa-grid">
+    <div class="palapa-card" data-reveal="up" data-delay="100">
+      <h3 class="palapa-card__title">Shore Palapa</h3>
+      <p class="palapa-card__desc">Front-row seats to the Caribbean. Steps from the water's edge, two sunbeds, a private table and shade on demand.</p>
+      <span class="palapa-card__price">From $80 / day</span>
+    </div>
+    <div class="palapa-card" data-reveal="up" data-delay="200" style="background:var(--espresso);">
+      <h3 class="palapa-card__title" style="color:var(--white);">Private Island Palapa</h3>
+      <p class="palapa-card__desc" style="color:rgba(255,255,255,0.65);">Slightly elevated, slightly apart. A semi-private palapa for two with direct waiter service and a hammock facing the horizon.</p>
+      <span class="palapa-card__price" style="color:var(--gold-lt)">From $140 / day</span>
+    </div>
+    <div class="palapa-card" data-reveal="up" data-delay="300">
+      <h3 class="palapa-card__title">Jungle Edge Palapa</h3>
+      <p class="palapa-card__desc">Where the sand meets the tree line. Dappled light, deep shade, and a sense of being tucked away from the world.</p>
+      <span class="palapa-card__price">From $65 / day</span>
+    </div>
+  </div>
+</section>
+
+<!-- Menu -->
+<section id="menu" style="background:var(--cream);padding:var(--sp-32) var(--sp-8);" aria-labelledby="menu-heading">
+  <div class="section-header section-header--center" data-reveal="up">
+    <span class="section-label">Eat &amp; drink</span>
+    <h2 id="menu-heading">The menu</h2>
+    <p>Sourced locally, made with intention. From ceviche at noon to mezcal at sunset.</p>
+  </div>
+
+  <div class="menu-grid" style="max-width:1000px;margin:0 auto;" data-reveal="up" data-delay="100">
+
+    <div>
+      <h3 class="menu-section__title">From the Kitchen</h3>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Ceviche del Mar</span>
+          <span class="menu-item__desc">Fresh catch, cenote lime, habanero, tostada</span>
+        </div>
+        <span class="menu-item__price">$22</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Aguachile Verde</span>
+          <span class="menu-item__desc">Shrimp, cucumber, serrano, avocado</span>
+        </div>
+        <span class="menu-item__price">$24</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Fish Tacos</span>
+          <span class="menu-item__desc">Grilled catch, pickled cabbage, chipotle crema, corn tortilla</span>
+        </div>
+        <span class="menu-item__price">$18</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Grilled Octopus</span>
+          <span class="menu-item__desc">Chorizo negro, romesco, fresh herbs</span>
+        </div>
+        <span class="menu-item__price">$34</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Jungle Bowl</span>
+          <span class="menu-item__desc">Quinoa, roasted seasonal vegetables, chaya pesto, seeds</span>
+        </div>
+        <span class="menu-item__price">$19</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Tulum Guacamole</span>
+          <span class="menu-item__desc">Avocado, pomegranate, jícama, chile, totopos</span>
+        </div>
+        <span class="menu-item__price">$16</span>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="menu-section__title">From the Bar</h3>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Palapa Mezcalita</span>
+          <span class="menu-item__desc">Mezcal, watermelon, lime, tajín rim</span>
+        </div>
+        <span class="menu-item__price">$17</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Cenote Agua Fresca</span>
+          <span class="menu-item__desc">Hibiscus, tamarind, or cucumber mint — NA</span>
+        </div>
+        <span class="menu-item__price">$9</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Coco Loco</span>
+          <span class="menu-item__desc">Fresh coconut, rum, lime, toasted coconut</span>
+        </div>
+        <span class="menu-item__price">$15</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Signature Margarita</span>
+          <span class="menu-item__desc">Blanco tequila, triple sec, fresh lime, sea salt</span>
+        </div>
+        <span class="menu-item__price">$16</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Melipona Bee's Knees</span>
+          <span class="menu-item__desc">Gin, wild Melipona honey, lemon, thyme</span>
+        </div>
+        <span class="menu-item__price">$19</span>
+      </div>
+      <div class="menu-item">
+        <div>
+          <span class="menu-item__name">Tulum Cold Brew</span>
+          <span class="menu-item__desc">Local cold brew, oat milk, palm sugar — NA</span>
+        </div>
+        <span class="menu-item__price">$8</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Reserve form -->
+<section class="form-section" id="reserve-palapa" aria-labelledby="bc-book-title">
+  <div class="container--narrow">
+    <div class="section-header section-header--center" data-reveal="up">
+      <span class="section-label">Day passes &amp; palapa reservations</span>
+      <h2 id="bc-book-title">Reserve your spot</h2>
+      <p>Hotel guests have complimentary beach access. Outside visitors can reserve a palapa day-pass below.</p>
+    </div>
+    <form class="booking-form" novalidate data-reveal="up" data-delay="100">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="bc-name">Name</label>
+          <input type="text" id="bc-name" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="bc-email">Email</label>
+          <input type="email" id="bc-email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="bc-date">Date</label>
+          <input type="date" id="bc-date">
+        </div>
+        <div class="form-field">
+          <label for="bc-guests">Party Size</label>
+          <select id="bc-guests">
+            <option>1 person</option>
+            <option>2 people</option>
+            <option>3–4 people</option>
+            <option>5–6 people</option>
+          </select>
+        </div>
+        <div class="form-field form-field--full">
+          <label for="bc-palapa">Palapa Type</label>
+          <select id="bc-palapa">
+            <option value="">Select…</option>
+            <option>Shore Palapa ($80)</option>
+            <option>Private Island Palapa ($140)</option>
+            <option>Jungle Edge Palapa ($65)</option>
+          </select>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <button type="submit" class="btn btn--primary" style="min-width:260px;justify-content:center;">Reserve My Palapa</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-brand__logo"><span>Chi*ka</span> Tulum</a>
+      <p>A barefoot-luxury sanctuary on Mexico's Caribbean coast. Sister property to Amansala.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">Ig</a>
+        <a href="#" aria-label="Facebook">Fb</a>
+        <a href="#" aria-label="Pinterest">Pt</a>
+      </div>
+    </div>
+    <nav class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+        <li><a href="spa.html">The Spa</a></li>
+        <li><a href="beach-club.html">Beach Club</a></li>
+        <li><a href="weddings.html">Weddings</a></li>
+        <li><a href="events.html">Private Events</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col">
+      <h4>Beach Club</h4>
+      <ul>
+        <li><a href="#menu">View Menu</a></li>
+        <li><a href="#reserve-palapa">Reserve a Palapa</a></li>
+        <li><a href="rooms.html">Stay with us</a></li>
+      </ul>
+    </nav>
+    <address class="footer-col">
+      <h4>Hours</h4>
+      <address>
+        Daily: 10am – Sunset<br>
+        Kitchen: 11am – 9pm<br><br>
+        <a href="tel:+529841234567">+52 984 123 4567</a>
+      </address>
+    </address>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CHI*KA Tulum. All rights reserved.</p>
+    <p><a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms</a></p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
